@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header header"
+                        "contenido contenido contenido sidebar"
+                        "widget1 widget2 widget3 widget4 "
+                        "footer footer footer footer";
+}
+.header{
+    background: #2c3e50;
+    color: #ffffff;
+    grid-area: header;
+}
+.contenido{
+    background: #f2f2f2;
+    grid-area: contenido;
+}
+.sidebar{
+    background: #c0392b;
+    color: #ffffff;
+    grid-area: sidebar;
+}
+.widget1,
+.widget3{
+    background: #34495e;
+    color: #fff;
+}
+.footer{
+    background: #606060;
+    color: #fff;
+    grid-area: footer;
+}
+.header,
+.contenido,
+.sidebar,
+.widget1, .widget2, .widget3, .widget4,
+.footer{
+    padding: 20px;
+}
+.widget1{ grid-area: widget1;}
+.widget2{ grid-area: widget2;}
+.widget3{ grid-area: widget3;}
+.widget4{ grid-area: widget4;}
+
+@media screen and (max-width: 768px){
+    .container{
+        grid-template-areas: "header header header header"
+                        "contenido contenido contenido contenido"
+                        "sidebar sidebar sidebar sidebar"
+                        "widget1 widget1 widget2 widget2"
+                        "widget3 widget3 widget4 widget4"
+                        "footer footer footer footer";
+    }
+}
+
+@media screen and (max-width: 375px){
+    .container{
+        grid-template-areas: "header header header header"
+                        "contenido contenido contenido contenido"
+                        "sidebar sidebar sidebar sidebar"
+                        "widget1 widget1 widget1 widget1"
+                        "widget2 widget2 widget2 widget2"
+                        "widget3 widget3 widget3 widget3"
+                        "widget4 widget4 widget4 widget4"
+                        "footer footer footer footer";
+    }
+}
